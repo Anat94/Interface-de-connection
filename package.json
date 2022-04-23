@@ -1,0 +1,26 @@
+{
+  "name": "interface-de-connection",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anat94/Interface-de-connection.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anat94/Interface-de-connection/issues"
+  },
+  "homepage": "https://github.com/Anat94/Interface-de-connection#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "mysql": "^2.18.1",
+    "sql": "^0.78.0"
+  }
+}
