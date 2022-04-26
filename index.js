@@ -1,5 +1,7 @@
 let express = require('express');
 let app = express();
+let connection = require('./config.js');
+
 
 app.set('view engine', 'ejs');
 
@@ -9,7 +11,15 @@ app.use(express.json());
 
 
 app.get('/', function(req, res) {
-    res.render('pages/index.ejs', {messages: "RAS"});
+    res.render('pages/index.ejs');
+});
+
+app.post('/sign_up', function(req, res) {
+    res.render('pages/inscription.ejs');
+});
+
+app.post('/sign_in', function(req, res) {
+    res.render('pages/index.ejs');
 });
 
 app.listen(5000);

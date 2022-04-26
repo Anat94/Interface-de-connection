@@ -1,34 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('/assets/font-awesome/css/font-awesome.min.css');
 
-.end {
-    justify-content: center;
-    align-items: center;
-    background-color: #f5f5f5;
-    font-family: 'Roboto', sans-serif;
-    font-size: 2pc;
+input.validate {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
 }
 
-.title_find {
-    color:#eb7371;
+body {
+    background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');
 }
 
-
-.encadre {
-    border: 0.1pc solid black;
-    margin: 2pc;
-    border-radius: 1.5pc;
-}
-
-.buttonp_m {
-    display: flex;
-    justify-content: center;
-}
-
-.moins {
-    /* margin-left: 100pc; */
-    padding-left:  2pc;
-}
-
-.buttonp_m :hover {
-    cursor: pointer;
+a {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
 }
