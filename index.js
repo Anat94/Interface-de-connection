@@ -20,6 +20,28 @@ app.post('/sign_in', function(req, res) {
     res.redirect('/');
 });
 
+app.post('/account_inc', function(req, res) {
+    let name = req.body.Name;
+    let email = req.body.Mail;
+    let password = req.body.Password;
+    let rpassword = req.body.Rpassword;
+    console.log(name, email, password, rpassword);
+    if (name != undefined && email != undefined && password != undefined && rpassword != undefined) {
+        if (password === rpassword ) {
+            connection.query("INSERT INTO Utilisateurs(Nom, email, password) VALUES (?, ?, ?)", [name, email, password], function(error, results, fields) {
+                if (error) throw error;
+                res.redirect("pages/account.ejs");
+            });
+        } else {
+            err_msg = "Les deux mot de passes ne correspondent pas !";
+            res.render('pages/inscription.ejs', { err_msg: err_msg } );
+        }
+    } else {
+        err_msg = "Merci de remplir tous les champs";
+        res.render('pages/inscription.ejs', { err_msg: err_msg } );
+    }
+});
+
 app.post('/account', function(req, res) {
     let email = req.body.email;
     let password = req.body.password;

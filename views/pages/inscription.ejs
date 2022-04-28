@@ -1,4 +1,7 @@
 <%- include('header') %>
+<% if(locals.err_msg) { %>
+  <div class="alert alert-danger" role="alert"><%= err_msg %></div>
+<% } %>
 <section class="vh-100 bg-image" style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
   <div class="mask d-flex align-items-center h-100 gradient-custom-3">
       <div class="container h-100">
@@ -7,18 +10,18 @@
             <div class="card" style="border-radius: 15px;">
               <div class="card-body p-5">
                 <h2 class="text-uppercase text-center mb-5">Créer un compte</h2>
-                <form>
+                <form action="/account_inc" method="post">
                   <div class="form-outline mb-4">
-                    <input type="text" id="Name" class="form-control validate" placeholder="&#xf007; Votre Nom"/>
+                    <input type="text" name="Name" class="form-control validate" placeholder="&#xf007; Votre Nom"/>
                   </div>
                   <div class="form-outline mb-4">
-                    <input type="email" id="Mail" class="form-control validate" placeholder="&#xf01c; Votre E-mail"/>
+                    <input type="email" name="Mail" class="form-control validate" placeholder="&#xf01c; Votre E-mail"/>
                   </div>
                   <div class="form-outline mb-4">
-                    <input type="password" id="Password" class="form-control validate" placeholder="&#xf023; Mot de passe"/>
+                    <input type="password" name="Password" class="form-control validate" placeholder="&#xf023; Mot de passe"/>
                   </div>
                   <div class="form-outline mb-4">
-                    <input type="password" id="Rpassword" class="form-control validate" placeholder="&#xf023; Repettez le mot de passe"/>
+                    <input type="password" name="Rpassword" class="form-control validate" placeholder="&#xf023; Repettez le mot de passe"/>
                   </div>
                   <div class="form-check d-flex justify-content-center mb-5">
                     <input
@@ -32,11 +35,11 @@
                     </label>
                   </div>
                   <div class="d-flex justify-content-center">
-                    <a type="button" class="btn btn-outline-warning waves-effect">S'inscrire &#xf072;</a>
+                    <button type="submit" class="btn btn-outline-warning waves-effect">S'inscrire &#xf072;</a>
                   </div>
+                </form>
+                <form action="/sign_in" method="post">
                     <p class="text-center text-muted mt-5 mb-0">Déja un compte ?</p>
-                  </form>
-                  <form action="/sign_in" method="post">
                     <button type="submit" class="btn btn-outline-danger">Se connecter</button>
                   </form>
               </div>
